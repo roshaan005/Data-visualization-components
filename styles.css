@@ -1,0 +1,109 @@
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+
+}
+@media only screen and (max-width: 600px) {
+
+    .top-panel{
+        background-color: lightpink;
+        width:99%;
+        height:10%
+    }
+    .container-phone{
+        
+        height:100%;
+        width:auto;
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+       
+    
+    }
+    .grid{
+       
+        width:95%;
+        height:50%;
+        margin-top: 5%;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap:1rem;
+        
+    }
+    .graph-1{
+        background-color: rgb(207, 255, 249);
+        border-radius: 1.2rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    .graph-2{
+        background-color: rgb(183, 251, 192);
+        border-radius: 1.2rem;
+       
+    }
+    .graph-3{
+        background-color: rgb(253, 245, 169);
+        border-radius: 1.2rem;
+    }
+    .graph-4{
+        background-color: rgb(255, 206, 247);
+        border-radius: 1.2rem;
+    }
+    .list{
+        font-weight: bold;
+        width:90%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        height:90%;
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10%;
+    }
+    .stack-bar{
+        margin-top: 10%;
+        width:95%;
+        height:60%;
+        background-color: rgb(255, 206, 247);
+        display:flex;
+        justify-content: center;
+        border-radius: 1.2rem;
+       
+       
+    }
+    .path
+    {
+        fill:none;
+        stroke:deeppink;
+        stroke-width:5;
+    }
+    .list-el{
+        display:flex;
+
+      
+        width:90%;
+        height:15%;
+        margin-top: 3%;
+    
+    }
+
+    .color{
+        background-color: rgb(2, 8, 2);
+        width:5%;
+        height:30%;
+        border-radius: 50%;
+        margin-top: 2%;
+        
+    }
+   span{
+       margin-left: 6%;
+       
+   }
+
+
+}
