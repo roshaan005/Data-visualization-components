@@ -132,10 +132,10 @@ let arc = d3.select(".graph-2").append("svg")
             .attr("width", arcChartWidth).attr("height", arcChartHeight)
             
 let dataArc = [{startAngle:0, endAngle:1.5,color:'#FFA41B'},
-            {startAngle:1.5, endAngle:3.4,color:'#000839'},
-            {startAngle:3.4, endAngle:4.2,color:'#00A8CC'},
+            {startAngle:1.5, endAngle:3.4,color:'#809BCE'},
+            {startAngle:3.4, endAngle:4.2,color:'#B8E0D2'},
             {startAngle:4.2, endAngle:5.9,color:'rgb(255, 144, 0)'},
-            {startAngle:5.9, endAngle:6.28,color:'#005082'}];
+            {startAngle:5.9, endAngle:6.28,color:'#C4B7D4'}];
 let segmentsArc = d3.arc()
                 .innerRadius(35)
                 .outerRadius(50)
@@ -143,7 +143,7 @@ let segmentsArc = d3.arc()
                 .padRadius(10)
                 .cornerRadius(4);
             
-let sectionsArc = arc.append("g").attr("transform", "translate(100, 90)")
+let sectionsArc = arc.append("g").attr("transform", "translate(90, 80)")
     .selectAll("path").data(dataArc);
 sectionsArc.enter().append("path").attr("d", segmentsArc).attr("fill", (d)=>d.color);
 
@@ -154,19 +154,19 @@ let secondArc = d3.select(".graph-3").append("svg")
             .attr("width", arcChartWidth).attr("height", arcChartHeight)
 
                         
-let seconddataArc = [{startAngle:0, endAngle:100,color:'#FFA41B'},
-{startAngle:1.5, endAngle:3.4,color:'#000839'},
+let seconddataArc = [{startAngle:0, endAngle:100,color:'#809BCE'},
+{startAngle:1.5, endAngle:3.4,color:'#C4B7D4'},
 
 
 ];
             
 
 let SecondSegmentsArc = d3.arc()
-                .innerRadius(35)
-                .outerRadius(50)
-                .padAngle(.3)
-                .padRadius(10)
-                .cornerRadius(3);
+.innerRadius(35)
+.outerRadius(50)
+.padAngle(.3)
+.padRadius(10)
+.cornerRadius(10);
 let secondSectionsArc = secondArc.append("g").attr("transform", "translate(90, 70)")
     .selectAll("path").data(seconddataArc);
 secondSectionsArc.enter().append("path").attr("d", SecondSegmentsArc).attr("fill", (d)=>d.color);
@@ -248,13 +248,13 @@ secondSectionsArc.enter().append("path").attr("d", SecondSegmentsArc).attr("fill
 
 
 const data = [
-    { name: 'John', score: 50 ,color:'red'},
-    { name: 'Simon', score: 76 ,color:'purple' },
-    { name: 'Samantha', score: 40,color:'green' },
-    { name: 'Patrick', score: 32 ,color:'blue'},
-    { name: 'Mary', score: 90,color:'yellow' },
-    { name: 'Christina', score: 75 ,color:'indigo'},
-    { name: 'Michael', score: 86 ,color:'orange'},
+    { name: '2001', score: 50 ,color:'#809BCE'},
+    { name: '2002', score: 76 ,color:'#95B8D1' },
+    { name: '2003', score: 40,color:'#B8E0D2' },
+    { name: '2004', score: 32 ,color:'#D6EADF'},
+    { name: '2005', score: 90,color:'#EAC4D5' },
+    { name: '2006', score: 75 ,color:'#F0E1BC'},
+    { name: '2007', score: 86 ,color:'#C4B7D4'},
   ];
   
   const width = 900;
@@ -282,6 +282,8 @@ const data = [
     .selectAll("rect")
     .data(data.sort((a, b) => d3.descending(a.score, b.score)))
     .join("rect")
+    .attr('rx','30')
+    .attr('ry','20')
       .attr("x", (d, i) => x(i))
       .attr("y", d => y(d.score))
       .attr('title', (d) => d.score)
@@ -295,7 +297,8 @@ const data = [
   
   function yAxis(g) {
     g.attr("transform", `translate(${margin.left}, 0)`)
-      .call(d3.axisLeft(y).ticks(null, data.format))
+      .call(d3.axisLeft(y).ticks(null, data.format).ticks(5))
+      
       .attr("font-size", '20px')
   }
 
